@@ -11,17 +11,15 @@ const clock = document.querySelector(".clock");
 let openTabs = [];
 let activeTabId = null;
 
-// Window state management
 let isWindowOpen = false;
 
-// Tab data mapping
 const tabData = {
   aboutme: { title: "About Me", icon: "👤" },
   favs: { title: "Favourites", icon: "⭐" },
   contact: { title: "Contact", icon: "📞" }
 };
 
-// Open Start Menu
+// start menu
 startBtn.addEventListener("click", () => {
   if (startMenu.classList.contains("active")) {
     startMenu.classList.remove("active");
@@ -30,12 +28,11 @@ startBtn.addEventListener("click", () => {
   }
 });
 
-// Close Start Menu
 closeMenuBtn.addEventListener("click", () => {
   startMenu.classList.remove("active");
 });
 
-// Handle welcome menu options
+// welcome menu options
 document.querySelectorAll(".menu-option").forEach(option => {
   option.addEventListener("click", () => {
     const id = option.getAttribute("data-open");
@@ -44,7 +41,7 @@ document.querySelectorAll(".menu-option").forEach(option => {
   });
 });
 
-// Open window/tab on double click
+// open on double click
 icons.forEach(icon => {
   icon.addEventListener("dblclick", () => {
     const id = icon.getAttribute("data-window");
@@ -52,22 +49,19 @@ icons.forEach(icon => {
   });
 });
 
-// Close main window
 closeBtn.addEventListener("click", () => {
   mainWindow.classList.remove("active");
   isWindowOpen = false;
   updateTaskbar();
 });
 
-// Open or switch to a tab
+// open or switch to tab
 function openOrSwitchToTab(tabId) {
-  // Show main window if hidden
   if (!isWindowOpen) {
     mainWindow.classList.add("active");
     isWindowOpen = true;
   }
 
-  // Create tab if it doesn't exist
   if (!openTabs.find(tab => tab.id === tabId)) {
     createTab(tabId);
   } else {
@@ -76,7 +70,7 @@ function openOrSwitchToTab(tabId) {
   updateTaskbar();
 }
 
-// Create a new tab
+// new tab
 function createTab(tabId) {
   const tab = {
     id: tabId,
@@ -89,11 +83,10 @@ function createTab(tabId) {
   switchToTab(tabId);
 }
 
-// Switch to a specific tab
+// switching tabs
 function switchToTab(tabId) {
   activeTabId = tabId;
 
-  // Update tab visuals
   document.querySelectorAll(".tab").forEach(tabEl => {
     if (tabEl.getAttribute("data-tab-id") === tabId) {
       tabEl.classList.add("active");
@@ -102,7 +95,6 @@ function switchToTab(tabId) {
     }
   });
 
-  // Update content sections
   document.querySelectorAll(".content-section").forEach(section => {
     if (section.getAttribute("data-window") === tabId) {
       section.classList.add("active");
@@ -111,11 +103,9 @@ function switchToTab(tabId) {
     }
   });
 
-  // Update taskbar
   updateTaskbar();
 }
 
-// Render all tabs
 function renderTabs() {
   tabContainer.innerHTML = "";
   openTabs.forEach(tab => {
@@ -131,11 +121,11 @@ function renderTabs() {
   });
 }
 
-// Update taskbar with current tasks (show individual tabs)
+// taskbar tabs
 function updateTaskbar() {
   taskbarTasks.innerHTML = "";
 
-  // Show each open tab as a separate taskbar button
+  // each open tab in taskbar
   openTabs.forEach(tab => {
     const taskBtn = document.createElement("div");
     taskBtn.className = "task-button";
@@ -150,7 +140,7 @@ function updateTaskbar() {
   });
 }
 
-// Make windows draggable
+// draggable windows
 let isDragging = false;
 let currentX, currentY, initialX, initialY;
 let activeWindow = null;
@@ -164,7 +154,7 @@ document.addEventListener("mousemove", drag);
 document.addEventListener("mouseup", dragEnd);
 
 function dragStart(e, win) {
-  if (e.target.tagName === 'BUTTON') return; // Don't drag when clicking buttons
+  if (e.target.tagName === 'BUTTON') return;
   
   initialX = e.clientX;
   initialY = e.clientY;
@@ -196,10 +186,22 @@ function dragEnd(e) {
   activeWindow = null;
 }
 
-// Live clock - reverted to original simple format
+// clock
 function updateClock() {
   const now = new Date();
   clock.textContent = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 }
 setInterval(updateClock, 1000);
 updateClock();
+
+// loader
+window.addEventListener("load", function() {
+  setTimeout(function() {
+    const loader = document.querySelector(".loader-wrapper");
+    loader.style.opacity = "0";
+    loader.style.transition = "opacity 0.5s ease-out";
+    setTimeout(function() {
+      loader.style.display = "none";
+    }, 500);
+  }, 2000);
+});
