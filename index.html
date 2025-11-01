@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shaurya</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="desktop">
+  <div class="icon" data-window="aboutme">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" width="48" height="48">
+      <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+    </svg>
+    <p>About Me</p>
+  </div>
+
+  <div class="icon" data-window="favs">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" width="48" height="48">
+      <path d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+    </svg>
+    <p>Favourites</p>
+  </div>
+
+  <div class="icon" data-window="contact">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" width="48" height="48">
+      <path d="M6.62 10.79a15.464 15.464 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.49 2.53.76 3.9.76a1 1 0 011 1V21a1 1 0 01-1 1C10.07 22 2 13.93 2 3a1 1 0 011-1h3.5a1 1 0 011 1c0 1.37.26 2.69.76 3.9a1 1 0 01-.21 1.11l-2.43 2.78z"/>
+    </svg>
+    <p>Contact</p>
+  </div>
+</div>
+
+
+  <div class="window" id="mainWindow">
+    <div class="title-bar">
+      <span class="title">Windows Explorer</span>
+      <div class="title-buttons">
+        <button class="title-btn close">✖</button>
+      </div>
+    </div>
+    <div class="tab-container" id="tabContainer">
+
+    </div>
+    <div class="window-body">
+      <div class="content-section active" data-window="aboutme">
+        <h2>About Me</h2>
+        <hr>
+        <p><strong>Name:</strong> Shaurya Upadhyaya</p>
+        <p><strong>Location:</strong> Singapore</p>
+        <p><strong>Bio:</strong> Welcome to my personal website! I'm a Grade 9 student who is passionate about coding, and design. This website is designed to resemble the classic Windows 95 interface, bringing a nostalgic touch to modern web design.</p>
+        <p>I enjoy exploring new languages, building projects, and sharing my work with others. Feel free to browse through my favorites and get in touch through the contact section.</p>
+      </div>
+      <div class="content-section" data-window="favs">
+        <h2>My Favourites</h2>
+        <hr>
+        <ul>
+          <li><strong>Programming Languages:</strong> JavaScript, Python, HTML, CSS</li>
+          <li><strong>Hobbies:</strong> Web Development, UI/UX Design, Chess</li>
+          <li><strong>Sports:</strong> Football, Volleyball, Cricket, Basketball</li>
+          <li><strong>Music:</strong> Travis Scott</li>
+          <li><strong>Games:</strong> Valorant, Clash Royale</li>
+        </ul>
+      </div>
+      <div class="content-section" data-window="contact">
+        <h2>Contact Me</h2>
+        <hr>
+        <p><strong>Email:</strong> upadhyaya.shaurya@gmail.com</p>
+        <p><strong>GitHub:</strong> github.com/shauryaupadhyaya</p>
+        <hr>
+        <p><em>Feel free to reach out for collaborations, questions, or just to say hello!</em></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="taskbar">
+    <div class="taskbar-left">
+      <div class="start-btn">
+        <span>Start</span>
+      </div>
+    </div>
+    <div class="taskbar-tasks" id="taskbarTasks">
+    </div>
+    <div class="taskbar-right">
+      <span class="clock">12:00 PM</span>
+    </div>
+  </div>
+
+  <div class="window" id="startMenu">
+    <div class="title-bar">
+      <span class="title">Welcome</span>
+      <div class="title-buttons">
+        <button class="title-btn close-menu">✖</button>
+      </div>
+    </div>
+    <div class="window-body welcome-body">
+      <h2>Welcome to My Portfolio!</h2>
+      <hr>
+      <p>Please choose a section to explore:</p>
+      <div class="menu-options">
+        <button class="menu-option" data-open="aboutme">
+          About Me
+        </button>
+        <button class="menu-option" data-open="favs">
+          Favourites
+        </button>
+        <button class="menu-option" data-open="contact">
+          Contact
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

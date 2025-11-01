@@ -1,0 +1,290 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: #008080;
+  font-family: "MS Sans Serif", "Tahoma", sans-serif;
+  image-rendering: pixelated;
+  overflow: hidden;
+}
+
+.desktop {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px;
+  color: white;
+}
+
+.icon {
+  width: 80px;
+  text-align: center;
+  cursor: default;
+}
+
+.icon img {
+  width: 48px;
+  height: 48px;
+}
+
+.icon p {
+  margin-top: 4px;
+  font-size: 12px;
+  text-shadow: 1px 1px 2px black;
+}
+
+/* --- Windows --- */
+.window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 650px;
+  height: 500px;
+  background-color: #c0c0c0;
+  border: 2px outset #c0c0c0;
+  box-shadow: 2px 2px 0px 0px #000000;
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.window.active {
+  display: flex;
+}
+
+.title-bar {
+  background: linear-gradient(to right, #000080, #1084d0);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 8px;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: move;
+  user-select: none;
+}
+
+.title-buttons {
+  display: flex;
+  gap: 2px;
+}
+
+.title-btn {
+  background-color: #c0c0c0;
+  border: 1px outset #c0c0c0;
+  border-radius: 2px;
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-btn:active {
+  border: 1px inset #c0c0c0;
+}
+
+.title-btn:hover {
+  background-color: #fff;
+}
+
+/* Tab container */
+.tab-container {
+  display: flex;
+  background-color: #c0c0c0;
+  border-bottom: 2px solid #808080;
+  gap: 2px;
+  padding: 2px;
+  overflow-x: auto;
+}
+
+.tab {
+  background: linear-gradient(to bottom, #d4d0c8, #c0c0c0);
+  border: 1px outset #c0c0c0;
+  padding: 4px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.tab.active {
+  background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+  border: 1px solid #fff;
+  border-bottom-color: #f0f0f0;
+  position: relative;
+  top: 2px;
+}
+
+.tab:active {
+  border: 1px inset #c0c0c0;
+}
+
+.window-body {
+  padding: 15px;
+  font-size: 13px;
+  overflow-y: auto;
+  flex: 1;
+  background-color: #ffffff;
+  border: 2px inset #c0c0c0;
+}
+
+.window-body h2 {
+  margin-top: 0;
+  color: #000080;
+  font-size: 16px;
+}
+
+.window-body hr {
+  border: 1px inset #c0c0c0;
+  margin: 10px 0;
+}
+
+.window-body ul {
+  padding-left: 20px;
+}
+
+.window-body ul li {
+  margin-bottom: 8px;
+}
+
+.content-section {
+  display: none;
+}
+
+.content-section.active {
+  display: block;
+}
+
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #c0c0c0;
+  border-top: 2px outset #c0c0c0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 0 5px;
+  z-index: 1001;
+}
+
+.taskbar-left {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.start-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: linear-gradient(to bottom, #d4d0c8, #c0c0c0);
+  border: 2px outset #c0c0c0;
+  padding: 4px 12px;
+  height: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.start-btn:active {
+  border: 2px inset #c0c0c0;
+}
+
+.start-btn img {
+  width: 16px;
+  height: 16px;
+}
+
+.taskbar-tasks {
+  display: flex;
+  flex: 1;
+  gap: 3px;
+  overflow-x: auto;
+}
+
+.task-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: linear-gradient(to bottom, #d4d0c8, #c0c0c0);
+  border: 2px outset #c0c0c0;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.task-button:active {
+  border: 2px inset #c0c0c0;
+}
+
+.task-button.active {
+  background: linear-gradient(to bottom, #e0e0e0, #d0d0d0);
+  border: 2px inset #c0c0c0;
+}
+
+.taskbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  background: linear-gradient(to bottom, #d4d0c8, #c0c0c0);
+  border: 2px inset #c0c0c0;
+  font-size: 13px;
+  font-weight: bold;
+  white-space: nowrap;
+  margin-right: 5px;
+}
+
+.separator {
+  height: 20px;
+  width: 2px;
+  background: linear-gradient(to bottom, #808080, #c0c0c0, #808080);
+  margin: 0 3px;
+}
+
+/* Welcome Menu Window */
+.welcome-body {
+  text-align: center;
+  padding: 30px;
+}
+
+.menu-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.menu-option {
+  background: linear-gradient(to bottom, #d4d0c8, #c0c0c0);
+  border: 2px outset #c0c0c0;
+  padding: 15px 25px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.1s;
+}
+
+.menu-option:active {
+  border: 2px inset #c0c0c0;
+  background: linear-gradient(to bottom, #c0c0c0, #d4d0c8);
+}
+
+.menu-option:hover {
+  background: linear-gradient(to bottom, #e0e0e0, #c0c0c0);
+}
