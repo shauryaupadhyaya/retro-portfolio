@@ -6,3 +6,4 @@
 - loading screen added, unique animation
 - converted to loading bar with gradient (2s to load)
 - icons updated for the pages/tabs
+- layout and information inside about me, contact and my favourites tabs updated
