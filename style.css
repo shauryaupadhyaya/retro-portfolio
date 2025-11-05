@@ -185,11 +185,14 @@ body {
   margin-bottom: 8px;
 }
 
-/* About Me Styles */
 .about-me-container {
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+.about-me-container .mini-window{
+  margin-bottom: 0;
 }
 
 .profile-section {
@@ -262,6 +265,10 @@ body {
   color: #333333;
 }
 
+.bio-section p:last-child{
+  margin-bottom: 0;
+}
+
 /* Favorites Styles */
 .favorites-category {
   margin-bottom: 20px;
@@ -279,6 +286,39 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
   gap: 12px;
   margin-bottom: 10px;
+}
+
+/* Mini Window */
+.mini-window {
+  background-color: #c0c0c0;
+  border: 2px outset #c0c0c0;
+  box-shadow: 2px 2px 0px 0px black;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.mini-title-bar{
+  background: linear-gradient(to right, #000080, #1084d0);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 8px;
+  font-weight: bold;
+  font-size: 12px;
+  user-select: none;
+}
+
+.mini-title{
+  flex: 1;
+}
+
+.mini-window-body{
+  padding: 12px;
+  font-size: 12px;
+  background-color: white;
+  border: 2px inset #c0c0c0;
 }
 
 @media (max-width: 600px) {
@@ -339,7 +379,6 @@ body {
   line-height: 1.2;
 }
 
-/* Music Section Styles */
 .music-section {
   margin: 10px 0;
 }
@@ -446,6 +485,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.contact-links .mini-window{
+  margin-bottom: 0;
 }
 
 .contact-item {
@@ -596,7 +639,6 @@ body {
   margin: 0 3px;
 }
 
-/* --- Additions / overrides --- */
 .favorite-icon img {
   width: 100%;
   height: 100%;
@@ -613,7 +655,6 @@ body {
   height: 22px;
 }
 
-/* Rotating CD links */
 .cd-links {
   display: flex;
   gap: 16px;
@@ -649,7 +690,6 @@ body {
   to { transform: rotate(360deg); }
 }
 
-/* Album collage (scrapbook style) */
 .album-collage {
   display: flex;
   flex-wrap: wrap;
