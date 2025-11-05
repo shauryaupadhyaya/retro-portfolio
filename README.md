@@ -9,3 +9,4 @@ This website is portfolio type website inspired by a windows 95 and windows 98 d
 - converted to loading bar with gradient (2s to load)
 - icons updated for the pages/tabs
 - layout and information inside about me, contact, and my favourites tabs updated
+- mini windows made inside each window with the same look
