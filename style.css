@@ -269,6 +269,17 @@ body {
   margin-bottom: 0;
 }
 
+.projects-section p {
+  line-height: 1.7;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: #333333;
+}
+
+.projects-section p:last-child{
+  margin-bottom: 0;
+}
+
 .favorites-category {
   margin-bottom: 20px;
 }
@@ -317,6 +328,18 @@ body {
   font-size: 12px;
   background-color: white;
   border: 2px inset #c0c0c0;
+}
+
+.language {
+  align-items: center;
+  gap: 4px;
+  background: linear-gradient(to bottom, #d4d0c8, #c0c0c0);
+  border: 2px outset #c0c0c0;
+  padding: 4px 12px;
+  height: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
 }
 
 @media (max-width: 600px) {
@@ -472,7 +495,12 @@ body {
   font-size: 14px;
 }
 
-/* Contact Section Styles */
+.my-projects-containers {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
 .contact-section {
   display: flex;
   flex-direction: column;

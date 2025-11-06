@@ -16,7 +16,8 @@ let isWindowOpen = false;
 const tabData = {
   aboutme: { title: "About Me", icon: "👤" },
   favs: { title: "Favourites", icon: "⭐" },
-  contact: { title: "Contact", icon: "📞" }
+  contact: { title: "Contact", icon: "📞" },
+  myprojects: { title: "My Projects", icon: "📚"}
 };
 
 // start menu
