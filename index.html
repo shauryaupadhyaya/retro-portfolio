@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shaurya</title>
+  <link rel="icon" href="https://win98icons.alexmeub.com/icons/png/monitor_windows.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,6 +27,11 @@
   <div class="icon" data-window="myprojects">
     <img src="https://win98icons.alexmeub.com/icons/png/mailbox_world-2.png"></img>
     <p>My Projects</p>
+  </div>
+
+  <div class="icon" data-window="music">
+    <img src="https://win98icons.alexmeub.com/icons/png/cd_audio_cd_a-3.png"></img>
+    <p>Music</p>
   </div>
 </div>
 
@@ -179,52 +185,6 @@
         <div class="favorites-category">
           <div class="mini-window">
             <div class="mini-title-bar">
-              <span class="mini-title">🎵 Music</span>
-            </div>
-            <div class="mini-window-body">
-              <div class="music-section">
-                <div class="music-player-card">
-                  <div class="music-album-art">
-                    <img src="https://th-i.thgim.com/public/entertainment/movies/lnkgyo/article70182121.ece/alternates/FREE_1200/Travis%20Scott%20delivers%20a%20historic%20debut%20performance%20in%20India%20on%20his%20CIRCUS%20MAXIMUS%20World%20Tour%20produced%20and%20promoted%20by%20BookMyShow%20Live%20.JPEG" alt="Travis Scott Album">
-                    <div class="album-cta">
-                      <a href="https://open.spotify.com/user/314r2lqkgkebejlzcqb2w3ed2jpm" target="_blank" class="spotify-button">
-                        <span>🎵</span> My Profile
-                      </a>
-                    </div>
-                  </div>
-                  <div class="music-info">
-                    <div class="music-title">My Favorite Artist</div>
-                    <div class="music-artist">Travis Scott</div>
-                    <div class="album-collage">
-                      <a href="https://open.spotify.com/album/18NOKLkZETa4sWwLMIm0UZ" target="_blank" class="album-card tilt-left">
-                        <img src="https://www.travisscott.com/cover/1.jpg" alt="UTOPIA">
-                        <span class="album-caption">UTOPIA</span>
-                      </a>
-                      <a href="https://open.spotify.com/album/41GuZcammIkupMPKH2OJ6I" target="_blank" class="album-card tilt-right">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/4/4b/Travis_Scott_-_Astroworld.png" alt="ASTROWORLD">
-                        <span class="album-caption">ASTROWORLD</span>
-                      </a>
-                      <a href="https://open.spotify.com/album/32lGAqeVkdJxEj2iv2Q01B" target="_blank" class="album-card tilt-left">
-                        <img src="https://i.scdn.co/image/ab67616d00001e0218325ce9b2c009de5dc8f9fd" alt="JACKBOYS 2">
-                        <span class="album-caption">JACKBOYS 2</span>
-                      </a>
-                      <a href="https://open.spotify.com/album/42WVQWuf1teDysXiOupIZt" target="_blank" class="album-card tilt-left">
-                        <img src="https://i.scdn.co/image/ab67616d0000b273f54b99bf27cda88f4a7403ce" alt="JACKBOYS 2">
-                        <span class="album-caption">Birds in the Trap Sing McKnight</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <hr>
-
-        <div class="favorites-category">
-          <div class="mini-window">
-            <div class="mini-title-bar">
               <span class="mini-title">🎮 Games</span>
             </div>
             <div class="mini-window-body">
@@ -297,6 +257,67 @@
           <hr>
           <p class="contact-message">Feel free to reach out for collaborations, questions, or just to say hello!</p>
         </div>
+      </div>
+
+      <div class="content-section" data-window="music">
+        <h2>Music</h2>
+        <div class="mini-window">
+            <div class="mini-title-bar">
+              <span class="mini-title">Currently Playing</span>
+            </div>
+            <div class="mini-window-body">
+              <div class="music-player-card">
+                <div class="music-album-art">
+                  <img id="current-album-art" src="https://via.placeholder.com/100" alt="Album Art">
+                </div>
+                <div class="music-info">
+                  <div>
+                    <div class="music-title" id="current-song-title">
+                      Not Playing
+                    </div>
+                    <div class="music-artist" id="current-artist">
+                      ---
+                    </div>
+                  </div>
+                  <div style="font-size: 11px; color: #666;">
+                    <span id="current-album">Album Name</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mini-window">
+            <div class="mini-title-bar">
+              <span class="mini-title">My Favorite Artist</span>
+            </div>
+            <div class="mini-window-body">
+              <div class="music-section">
+                <div class="music-player-card">
+                  <div class="music-info">
+                    <div class="music-artist">Travis Scott</div>
+                    <div class="album-collage">
+                      <a href="https://open.spotify.com/album/18NOKLkZETa4sWwLMIm0UZ" target="_blank" class="album-card tilt-left">
+                        <img src="https://www.travisscott.com/cover/1.jpg" alt="UTOPIA">
+                        <span class="album-caption">UTOPIA</span>
+                      </a>
+                      <a href="https://open.spotify.com/album/41GuZcammIkupMPKH2OJ6I" target="_blank" class="album-card tilt-right">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/4/4b/Travis_Scott_-_Astroworld.png" alt="ASTROWORLD">
+                        <span class="album-caption">ASTROWORLD</span>
+                      </a>
+                      <a href="https://open.spotify.com/album/32lGAqeVkdJxEj2iv2Q01B" target="_blank" class="album-card tilt-left">
+                        <img src="https://i.scdn.co/image/ab67616d00001e0218325ce9b2c009de5dc8f9fd" alt="JACKBOYS 2">
+                        <span class="album-caption">JACKBOYS 2</span>
+                      </a>
+                      <a href="https://open.spotify.com/album/42WVQWuf1teDysXiOupIZt" target="_blank" class="album-card tilt-left">
+                        <img src="https://i.scdn.co/image/ab67616d0000b273f54b99bf27cda88f4a7403ce" alt="JACKBOYS 2">
+                        <span class="album-caption">Birds in the Trap Sing McKnight</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
 
       <div class="content-section" data-window="myprojects">

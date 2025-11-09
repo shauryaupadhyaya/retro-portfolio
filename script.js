@@ -17,7 +17,8 @@ const tabData = {
   aboutme: { title: "About Me", icon: "👤" },
   favs: { title: "Favourites", icon: "⭐" },
   contact: { title: "Contact", icon: "📞" },
-  myprojects: { title: "My Projects", icon: "📚"}
+  myprojects: { title: "My Projects", icon: "🧑🏾‍💻"},
+  music: { title: "Music", icon: "🎵"}
 };
 
 // start menu
@@ -205,4 +206,64 @@ window.addEventListener("load", function() {
       loader.style.display = "none";
     }, 500);
   }, 2000);
+});
+
+// now playing api (apiKey = "5cbdcee87a52605c0ec2887e85011b11")
+document.addEventListener('DOMContentLoaded', function() {
+  function updateNowPlaying(songData) {
+    const titleEl = document.getElementById('current-song-title');
+    const artistEl = document.getElementById('current-artist');
+    const albumEl = document.getElementById('current-album');
+    const artEl = document.getElementById('current-album-art');
+
+    if(titleEl) titleEl.textContent = songData.title || 'Not Playing';
+    if(artistEl) artistEl.textContent = songData.artist || '---';
+    if(albumEl) albumEl.textContent = songData.album || 'Album Name';
+    if(artEl) artEl.src = songData.albumArt || 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100"%3E%3Crect fill="%23ddd" width="100" height="100"/%3E%3C/svg%3E';
+  }
+
+  async function getNowPlaying() {
+    const url = `https://lastfm.nkko.workers.dev/?method=user.getRecentTracks&user=xnuso`;
+
+    try {
+      const response = await fetch(url);
+
+      if (!response.ok){
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      if (!data.recenttracks || !data.recenttracks.track || data.recenttracks.track.length === 0) {
+        updateNowPlaying({
+          title: 'No recent tracks',
+          artist: '---',
+          album: '---',
+          albumArt: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100"%3E%3Crect fill="%23ddd" width="100" height="100"/%3E%3C/svg%3E'
+        });
+        return;
+      }
+
+      const track = data.recenttracks.track[0];
+
+      updateNowPlaying({
+        title: track.name,
+        artist: track.artist["#text"],
+        album: track.album["#text"] || 'Unknown Album',
+        albumArt: track.image[2]["#text"] || 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100"%3E%3Crect fill="%23ddd" width="100" height="100"/%3E%3C/svg%3E'
+      });
+
+    } catch (error) {
+      console.error('Error fetching Last.fm data:', error);
+      updateNowPlaying({
+        title: 'Unable to load',
+        artist: '---',
+        album: '---',
+        albumArt: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100"%3E%3Crect fill="%23ddd" width="100" height="100"/%3E%3C/svg%3E'
+      });
+    }
+  }
+
+  getNowPlaying();
+  setInterval(getNowPlaying, 5000);
 });
