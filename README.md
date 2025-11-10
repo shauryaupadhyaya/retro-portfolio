@@ -14,3 +14,5 @@ This website is portfolio type website inspired by a windows 95 and windows 98 d
 - music section seperated into a different tab that opens to show my favourite albums/artist
 - lastfm api linked, showing current playing song every 5 seconds
 - favicon added
+- devpost linked to contact section
+- welcome window updated
