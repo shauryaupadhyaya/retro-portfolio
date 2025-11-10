@@ -862,3 +862,68 @@ body {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+.contact-form{
+  background: #c0c0c0;
+  padding: 15px;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  font-family: 'MS Sans Serif', 'Microsoft Sans Serif', sans-serif;
+}
+
+.form-group{
+  margin-bottom: 12px;
+}
+
+.form-label{
+  display: block;
+  font-size: 11px;
+  font-weight: normal;
+  margin-bottom: 4px;
+  color: #000000;
+}
+
+.form-input, .form-textarea{
+  width: 100%;
+  padding: 3px 4px;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  font-family: 'MS Sans Serif', 'Microsoft Sans Serif', sans-serif;
+  font-size: 11px;
+  box-sizing: border-box;
+}
+
+.form-input{
+  height: 21px;
+}
+
+.form-textarea{
+  min-height: 80px;
+  resize: vertical;
+}
+
+.form-input:focus, .form-textarea:focus{
+  outline: 1px dotted black;
+  outline-offset: -3px;
+}
+
+.submit-btn{
+  padding: 4px 12px;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  font-family: 'MS Sans Serif', 'Microsoft Sans Serif', sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 75px;
+}
+
+.submit-btn:active{
+  border-color: #000000 #ffffff #ffffff #000000;
+  padding: 5px 11px 3px 13px;
+}
+
+.submit-btn:focus{
+  outline: 1px dotted black;
+  outline-offset: -4px;
+}

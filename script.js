@@ -267,3 +267,22 @@ document.addEventListener('DOMContentLoaded', function() {
   getNowPlaying();
   setInterval(getNowPlaying, 5000);
 });
+
+// email form
+document.getElementById('contactform').addEventListener('submit', function(e){
+  e.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+
+  const subject = encodeURIComponent(`Portfolio Contact from ${name}`)
+  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)
+  const mailtolink = `mailto:shaurya.upadhyaya@myglobal.school?subject=${subject}&body=${body}`
+
+  window.location.href = mailtolink;
+
+  alert('Opening your email...')
+
+  this.reset();
+});
