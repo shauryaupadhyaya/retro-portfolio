@@ -16,3 +16,4 @@ This website is portfolio type website inspired by a windows 95 and windows 98 d
 - favicon added
 - devpost linked to contact section
 - welcome window updated
+- mailto added with direct message opened
